@@ -12,9 +12,9 @@ char * red ( const char *string ) {
   size_t a_size = strlen(RED_COLOR) + strlen(string) + strlen(RESET) + 1;
   char *words = malloc(a_size);
 
-  strncat(words, RED_COLOR, sizeof(RED_COLOR));
-  strncat(words, string, sizeof(string));
-  strncat(words, RESET, sizeof(RESET));
+  strncat(words, RED_COLOR, strlen(RED_COLOR) + 1);
+  strncat(words, string, strlen(string) + 1);
+  strncat(words, RESET, strlen(RESET) + 1);
 
   return words;
 }
@@ -23,9 +23,9 @@ char * green ( const char *string ) {
   size_t a_size = strlen(GREEN_COLOR) + strlen(string) + strlen(RESET) + 1;
   char *words = malloc(a_size);
 
-  strncat(words, GREEN_COLOR, sizeof(GREEN_COLOR));
-  strncat(words, string, sizeof(string));
-  strncat(words, RESET, sizeof(RESET));
+  strncat(words, GREEN_COLOR, strlen(GREEN_COLOR) + 1);
+  strncat(words, string, strlen(string) + 1);
+  strncat(words, RESET, strlen(RESET) + 1);
 
   return words;
 }
@@ -34,9 +34,9 @@ char * blue ( const char *string ) {
   size_t a_size = strlen(BLUE_COLOR) + strlen(string) + strlen(RESET) + 1;
   char *words = malloc(a_size);
 
-  strncat(words, BLUE_COLOR, sizeof(BLUE_COLOR));
-  strncat(words, string, sizeof(string));
-  strncat(words, RESET, sizeof(RESET));
+  strncat(words, BLUE_COLOR, strlen(BLUE_COLOR) + 1);
+  strncat(words, string, strlen(string) + 1);
+  strncat(words, RESET, strlen(RESET) + 1);
 
   return words;
 }
