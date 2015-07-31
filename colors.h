@@ -17,16 +17,16 @@ extern "C" {
 
 // Reserved for internal use.
 
-static char * paint_it ( const char *string, const char *color_code );
+static void paint_it ( const char *string, const char *color_code );
 
 // The actual interface.
 
-char * red ( const char *string );
-char * green( const char *string );
-char * yellow ( const char *string );
-char * blue ( const char *string );
-char * magenta ( const char *string );
-char * cyan ( const char *string );
+void red ( const char *string );
+void green( const char *string );
+void  yellow ( const char *string );
+void  blue (  const char *string );
+void magenta (  const char *string );
+void cyan (  const char *string );
 
 
 #ifdef __cplusplus

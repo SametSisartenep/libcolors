@@ -1,7 +1,7 @@
 
 /*
  * Author: Rodrigo "SametSisartenep" González López <rodrigosloop@gmail.com>
- * About: Simple library to print basic colors.
+ * About: Simple library to prvoid basic colors.
  * File: colors.c
  * License: BSD Clause 3
  *
@@ -20,37 +20,34 @@
 #define CYAN_COLOR "\x1b[0;36m"
 #define RESET "\x1b[0m"
 
-static char * paint_it ( const char *string, const char *color_code ) {
-  size_t a_size = strlen(color_code) + strlen(string) + strlen(RESET) + 1;
-  char *words = malloc(a_size);
+/* TODO
+ * r_print (); // Rainbow print. Use va_list to prvoid different colors.
+ */
 
-  strncat(words, color_code, strlen(color_code) + 1);
-  strncat(words, string, strlen(string) + 1);
-  strncat(words, RESET, strlen(RESET) + 1);
-
-  return words;
+static void paint_it ( const char *string, const char *color_code ) {
+  printf("%s%s%s", color_code, string, RESET);
 }
 
-char * red ( const char *string ) {
-  return paint_it(string, RED_COLOR);
+void red ( const char *string ) {
+  paint_it(string, RED_COLOR);
 }
 
-char * green ( const char *string ) {
-  return paint_it(string, GREEN_COLOR);
+void green ( const char *string ) {
+  paint_it(string, GREEN_COLOR);
 }
 
-char * yellow ( const char *string ) {
-  return paint_it(string, YELLOW_COLOR);
+void yellow ( const char *string ) {
+  paint_it(string, YELLOW_COLOR);
 }
 
-char * blue ( const char *string ) {
-  return paint_it(string, BLUE_COLOR);
+void blue ( const char *string ) {
+  paint_it(string, BLUE_COLOR);
 }
 
-char * magenta ( const char *string ) {
-  return paint_it(string, MAGENTA_COLOR);
+void magenta ( const char *string ) {
+  paint_it(string, MAGENTA_COLOR);
 }
 
-char * cyan ( const char *string ) {
-  return paint_it(string, CYAN_COLOR);
+void cyan ( const char *string ) {
+  paint_it(string, CYAN_COLOR);
 }

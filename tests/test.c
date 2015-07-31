@@ -1,3 +1,8 @@
+
+/*
+ * This Test file is deprecated. As of version 2.x
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
