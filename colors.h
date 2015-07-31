@@ -22,7 +22,7 @@ static void paint_it ( const char *string, const char *color_code );
 // The actual interface.
 
 void red ( const char *string );
-void green( const char *string );
+void green ( const char *string );
 void  yellow ( const char *string );
 void  blue (  const char *string );
 void magenta (  const char *string );

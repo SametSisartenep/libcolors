@@ -1,7 +1,7 @@
 
 /*
  * Author: Rodrigo "SametSisartenep" González López <rodrigosloop@gmail.com>
- * About: Simple library to prvoid basic colors.
+ * About: Simple library to print basic colors.
  * File: colors.c
  * License: BSD Clause 3
  *
@@ -9,8 +9,6 @@
 
 #include "colors.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 #define RED_COLOR "\x1b[0;31m"
 #define GREEN_COLOR "\x1b[0;32m"
@@ -21,7 +19,7 @@
 #define RESET "\x1b[0m"
 
 /* TODO
- * r_print (); // Rainbow print. Use va_list to prvoid different colors.
+ * r_print (); // Rainbow print. Use va_list to print different colors.
  */
 
 static void paint_it ( const char *string, const char *color_code ) {
