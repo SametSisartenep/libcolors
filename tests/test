@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+check_color () {
+  if [ $1 == $2 ]; then
+    echo -e "\x1b[0;32mOK\x1b[0m"
+  else
+    echo -e "\x1b[0;31mERROR\x1b[0m"
+  fi
+}
+
+if [ -f ./print-colors ]; then
+  echo "Starting Test \"Framework\""
+  i=1
+  keytext="Some Text Here"
+  keycolor="\x1b[0;3"
+  reset="\x1b[0m"
+  for color in red green yellow blue magenta cyan; do
+    echo -n "Testing '${color}' color: "
+    text=$(LD_LIBRARY_PATH=/home/samet/projects/c/junk/libcolors ./print-colors |
+    head -$i | tail -1)
+    text_cmp=$keycolor${i}m$keytext$reset
+    echo "$text $text_cmp"
+    check_color $text $text_cmp
+    i=`echo "${i} + 1" | bc`
+  done
+else
+  echo "Sorry, the file 'print-colors' doesn't exits."
+  echo "Make sure you did use ~$ make check to execute this test."
+  exit 1
+fi
