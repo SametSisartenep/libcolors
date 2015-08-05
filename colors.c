@@ -9,6 +9,7 @@
 
 #include "colors.h"
 #include <stdio.h>
+#include <stdarg.h>
 
 #define RED_COLOR "\x1b[0;31m"
 #define GREEN_COLOR "\x1b[0;32m"
@@ -23,7 +24,7 @@
  */
 
 static void paint_it ( const char *string, const char *color_code ) {
-  printf("%s%s%s", color_code, string, RESET);
+    printf("%s%s%s", color_code, string, RESET);
 }
 
 void red ( const char *string ) {
@@ -48,4 +49,31 @@ void magenta ( const char *string ) {
 
 void cyan ( const char *string ) {
   paint_it(string, CYAN_COLOR);
+}
+
+void r_print ( const char *fmt, ... ) {
+  va_list ap;
+
+  va_start(ap, fmt);
+
+  while (*fmt != '\0') {
+    if (*fmt == '%') {
+      fmt++;
+      if (*fmt == 'r') {
+        red(va_arg(ap, char*));
+      } else if (*fmt == 'g') {
+        green(va_arg(ap, char*));
+      } else if (*fmt == 'y') {
+        yellow(va_arg(ap, char*));
+      } else if (*fmt == 'b') {
+        blue(va_arg(ap, char*));
+      } else if (*fmt == 'm') {
+        magenta(va_arg(ap, char*));
+      } else if (*fmt == 'c') {
+        cyan(va_arg(ap, char*));
+      }
+    }
+    fmt++;
+  }
+  va_end(ap);
 }

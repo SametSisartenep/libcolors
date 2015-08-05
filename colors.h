@@ -24,9 +24,11 @@ static void paint_it ( const char *string, const char *color_code );
 void red ( const char *string );
 void green ( const char *string );
 void  yellow ( const char *string );
-void  blue (  const char *string );
-void magenta (  const char *string );
-void cyan (  const char *string );
+void  blue ( const char *string );
+void magenta ( const char *string );
+void cyan ( const char *string );
+
+void r_print ( const char *fmt, ... );
 
 
 #ifdef __cplusplus
