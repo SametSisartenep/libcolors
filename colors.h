@@ -15,11 +15,7 @@ extern "C" {
 #endif
 
 
-// Reserved for internal use.
-
-static void paint_it ( const char *string, const char *color_code );
-
-// The actual interface.
+// The interface
 
 void red ( const char *string );
 void green ( const char *string );

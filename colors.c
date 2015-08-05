@@ -19,9 +19,6 @@
 #define CYAN_COLOR "\x1b[0;36m"
 #define RESET "\x1b[0m"
 
-/* TODO
- * r_print (); // Rainbow print. Use va_list to print different colors.
- */
 
 static void paint_it ( const char *string, const char *color_code ) {
     printf("%s%s%s", color_code, string, RESET);
