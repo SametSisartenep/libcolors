@@ -1,34 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
+    <meta charset="UTF-8">
     <title>Libcolors by SametSisartenep</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Libcolors</h1>
+      <h2 class="project-tagline">A basic colors library for the C language.</h2>
+      <a href="https://github.com/SametSisartenep/libcolors" class="btn">View on GitHub</a>
+      <a href="https://github.com/SametSisartenep/libcolors/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/SametSisartenep/libcolors/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <header>
-      <div class="container">
-        <h1>Libcolors</h1>
-        <h2>A basic colors library for the C language.</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/SametSisartenep/libcolors/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/SametSisartenep/libcolors/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/SametSisartenep/libcolors" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="libcolors" class="anchor" href="#libcolors" aria-hidden="true"><span class="octicon octicon-link"></span></a>libcolors</h1>
 
 <p>A basic colors library for the C language.</p>
@@ -50,18 +41,52 @@
 </ul>
 
 <h3>
-<a id="coming-soon" class="anchor" href="#coming-soon" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coming soon</h3>
+<a id="rainbow-function" class="anchor" href="#rainbow-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rainbow function</h3>
 
-<div class="highlight highlight-c"><pre><span class="pl-k">void</span> <span class="pl-en">r_print</span> ( <span class="pl-k">const</span> <span class="pl-k">char</span> *fmt, ... ); <span class="pl-c">// Print a multicolor array.</span></pre></div>
+<div class="highlight highlight-c"><pre><span class="pl-k">void</span> <span class="pl-en">r_print</span> ( <span class="pl-k">const</span> <span class="pl-k">char</span> *fmt, ... ); <span class="pl-c">// Print a multicolor array</span></pre></div>
+
+<p>Where <code>fmt</code> is a string containing the color code based on:</p>
+
+<ul>
+<li>
+<code>%r</code> - Red</li>
+<li>
+<code>%g</code> - Green</li>
+<li>
+<code>%y</code> - Yellow</li>
+<li>
+<code>%b</code> - Blue</li>
+<li>
+<code>%m</code> - Magenta</li>
+<li>
+<code>%c</code> - Cyan</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="highlight highlight-c"><pre>  #<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>stdio.h<span class="pl-pds">&gt;</span></span>
+  #<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">"</span>colors.h<span class="pl-pds">"</span></span>
+
+  <span class="pl-k">int</span> <span class="pl-en">main</span> ( <span class="pl-k">int</span> argc, <span class="pl-k">char</span> **argv ) {
+    <span class="pl-c1">r_print</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-ii">%</span>r<span class="pl-c1">%g</span><span class="pl-ii">%</span>b<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Red text<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Green text<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Blue text<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>);
+
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+  }</pre></div>
 
 <h1>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
 
 <p><a href="http://opensource.org/licenses/BSD-3-Clause"><img src="http://img.shields.io/badge/license-BSD3-brightgreen.svg" alt="License"></a></p>
-      </section>
-    </div>
 
-              <script type="text/javascript">
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/SametSisartenep/libcolors">Libcolors</a> is maintained by <a href="https://github.com/SametSisartenep">SametSisartenep</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
