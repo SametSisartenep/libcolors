@@ -16,7 +16,7 @@ libstatic: colors.c
 	$(AR) libcolors.a *.o
 
 .PHONY: check
-check:
+check: libshared
 	gcc -Wall -o tests/test tests/test.c -L$$PWD -lcolors
 	LD_LIBRARY_PATH=$$PWD ./tests/test
 
